@@ -38,6 +38,7 @@ namespace MvcMusicStore.Controllers
         // GET: Reviews/Create
         public ActionResult Create()
         {
+            ViewBag.AlbumId = new SelectList(db.Albums, "AlbumId", "Title");
             return View();
         }
 

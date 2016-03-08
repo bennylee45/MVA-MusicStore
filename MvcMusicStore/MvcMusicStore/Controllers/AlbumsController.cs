@@ -14,13 +14,21 @@ namespace MvcMusicStore.Controllers
     {
         private MvcMusicStoreContext db = new MvcMusicStoreContext();
 
+        public ActionResult DisplayByArtist()
+        {
+            // image code here
+            return View();
+        }
+
         // GET: Albums
+        //[Route("Albums/All")]  // Helps with customizing routes
         public ActionResult Index()
         {
             return View(db.Albums.ToList());
         }
 
         // GET: Albums/Details/5
+        [Route("Album/{id:int}")]  // Helps with customizing routes
         public ActionResult Details(int? id)
         {
             if (id == null)
